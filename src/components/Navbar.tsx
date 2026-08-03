@@ -41,7 +41,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 border-b border-lmBorder/80 bg-white/90 backdrop-blur-lg dark:border-mistLine/30 dark:bg-navy/82"
+      className="sticky top-0 z-50 border-b border-lmBorder/80 bg-white/90 backdrop-blur-lg dark:border-mistLine/30 dark:bg-navy/80"
     >
       <nav
         className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:px-10 md:py-4"
@@ -90,7 +90,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div
           id="mobile-navigation"
-          className="border-t border-lmBorder bg-white px-4 py-3 dark:border-mistLine/30 dark:bg-navy/96 md:hidden"
+          className="border-t border-lmBorder bg-white px-4 py-3 dark:border-mistLine/30 dark:bg-navy/95 md:hidden"
         >
           <ul className="flex flex-col gap-3" onClick={() => setIsMenuOpen(false)}>
             {navLinks.map((link) => (
