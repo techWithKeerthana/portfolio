@@ -92,9 +92,30 @@ export type Project = {
   githubUrl: string
   liveUrl: string
   stages: string[]
+  featured?: boolean
 }
 
 export const projectsData: Project[] = [
+  {
+    title: 'Eduverse AI – AI-Powered Personalized Learning Platform',
+    duration: '06/2026 - Present',
+    stack: [
+      'React.js',
+      'Node.js',
+      'FastAPI',
+      'PostgreSQL',
+      'RAG',
+      'Groq LLM',
+      'ONNX',
+      'ChromaDB',
+    ],
+    description:
+      'Full-stack AI learning platform with a RAG pipeline letting students query uploaded study materials via vector search. Integrates Groq LLM APIs, ONNX-based embeddings, and ChromaDB for fast semantic retrieval with scalable REST APIs, auth, document processing, and AI-powered chat.',
+    githubUrl: 'https://github.com/techWithKeerthana/Eduverse_AI.git',
+    liveUrl: 'https://eduverse-ai-alpha.vercel.app',
+    stages: ['ingest', 'embed', 'retrieve', 'generate'],
+    featured: true,
+  },
   {
     title: 'Queue Management System',
     duration: '06/2026 - 07/2026',

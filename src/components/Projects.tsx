@@ -53,16 +53,29 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.45, delay: index * 0.05, ease: 'easeOut' }}
-              className="group rounded-[1.6rem] border border-mistLine/30 bg-[linear-gradient(145deg,rgba(28,37,65,0.78),rgba(11,19,43,0.72))] p-5 sm:p-6"
+              className={`group rounded-[1.6rem] border p-5 sm:p-6 ${
+                project.featured
+                  ? 'border-tealSignal/55 bg-[linear-gradient(145deg,rgba(28,37,65,0.92),rgba(11,19,43,0.88))] lg:col-span-2'
+                  : 'border-mistLine/30 bg-[linear-gradient(145deg,rgba(28,37,65,0.78),rgba(11,19,43,0.72))]'
+              }`}
             >
               <div className="mb-4 flex items-center justify-between gap-3">
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-mistLine">
-                  {project.duration}
-                </p>
+                <div className="flex items-center gap-3">
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-mistLine">
+                    {project.duration}
+                  </p>
+                  {project.featured ? (
+                    <span className="rounded-full bg-amberPulse px-2.5 py-0.5 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy">
+                      Featured
+                    </span>
+                  ) : null}
+                </div>
                 <span className="h-2 w-2 rounded-full bg-amberPulse" aria-hidden="true" />
               </div>
 
-              <h3 className="font-heading text-[1.32rem] font-semibold leading-tight text-ice">
+              <h3 className={`font-heading font-semibold leading-tight text-ice ${
+                project.featured ? 'text-[1.55rem]' : 'text-[1.32rem]'
+              }`}>
                 {project.title}
               </h3>
 
