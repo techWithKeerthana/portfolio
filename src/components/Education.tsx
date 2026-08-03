@@ -10,12 +10,12 @@ export default function Education() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.55, ease: 'easeOut' }}
-        className="rounded-[2rem] border border-mistLine/30 bg-indigoSlate/55 p-6 sm:p-8 md:p-10"
+        className="rounded-[2rem] border border-lmBorder bg-lmSurface p-6 shadow-sm sm:p-8 md:p-10 dark:border-mistLine/30 dark:bg-indigoSlate/55 dark:shadow-none"
       >
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-tealSignal">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-tealDark dark:text-tealSignal">
           Education
         </p>
-        <h2 className="type-section-title mt-4 max-w-3xl text-ice">
+        <h2 className="type-section-title mt-4 max-w-3xl text-lmText dark:text-ice">
           Academic foundation in AI/ML, backed by practical builds.
         </h2>
 
@@ -23,19 +23,19 @@ export default function Education() {
           {educationData.map((item) => (
             <article
               key={item.degree}
-              className="rounded-2xl border border-mistLine/30 bg-navy/45 p-5"
+              className="rounded-2xl border border-lmBorder bg-lmSurfaceAlt p-5 dark:border-mistLine/30 dark:bg-navy/45"
             >
               <div className="flex flex-col items-start gap-2 sm:flex-row sm:justify-between sm:gap-4">
                 <div>
-                  <h3 className="flex items-center gap-2 font-heading text-lg font-semibold text-ice">
-                    <GraduationCap size={17} className="text-tealSignal" aria-hidden="true" />
+                  <h3 className="flex items-center gap-2 font-heading text-lg font-semibold text-lmText dark:text-ice">
+                    <GraduationCap size={17} className="text-tealDark dark:text-tealSignal" aria-hidden="true" />
                     {item.degree}
                   </h3>
-                  <p className="mt-1 text-sm text-[#d6e6ff]">
+                  <p className="mt-1 text-sm text-lmTextSoft dark:text-[#d6e6ff]">
                     {item.institution} - {item.location}
                   </p>
                 </div>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-mistLine">
+                <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-lmMuted dark:text-mistLine">
                   {item.duration}
                 </p>
               </div>
@@ -44,15 +44,15 @@ export default function Education() {
         </div>
 
         <div className="mt-7 rounded-2xl border border-mistLine/30 bg-navy/45 p-5">
-          <h3 className="flex items-center gap-2 font-heading text-base font-semibold text-ice">
-            <Languages size={17} className="text-tealSignal" aria-hidden="true" />
+          <h3 className="flex items-center gap-2 font-heading text-base font-semibold text-lmText dark:text-ice">
+            <Languages size={17} className="text-tealDark dark:text-tealSignal" aria-hidden="true" />
             Languages
           </h3>
           <ul className="mt-4 flex flex-wrap gap-2.5">
             {languagesData.map((language) => (
               <li
                 key={language}
-                className="rounded-full border border-mistLine/35 bg-indigoSlate/50 px-3 py-1.5 text-sm font-medium text-[#dbe8ff]"
+                className="rounded-full border border-lmBorder bg-lmSurfaceAlt px-3 py-1.5 text-sm font-medium text-lmTextSoft dark:border-mistLine/35 dark:bg-indigoSlate/50 dark:text-[#dbe8ff]"
               >
                 {language}
               </li>

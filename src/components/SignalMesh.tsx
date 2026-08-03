@@ -83,7 +83,7 @@ export default function SignalMesh({ className = '' }: SignalMeshProps) {
 
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border border-mistLine/30 bg-indigoSlate/80 p-4 shadow-soft ${className}`}
+      className={`relative overflow-hidden rounded-[2rem] border border-lmBorder bg-indigoSlate/80 p-4 shadow-soft dark:border-mistLine/30 ${className}`}
       aria-hidden="true"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(91,192,190,0.22),transparent_36%),radial-gradient(circle_at_72%_66%,rgba(244,211,94,0.14),transparent_32%)]" />

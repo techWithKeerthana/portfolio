@@ -17,7 +17,7 @@ function ProjectFlow({ stages }: { stages: string[] }) {
     <ol className="flex items-center gap-2 overflow-x-auto pb-1" aria-label="Project workflow stages">
       {stages.map((stage, index) => (
         <li key={stage} className="flex items-center gap-2 whitespace-nowrap">
-          <span className="rounded-full border border-mistLine/45 bg-navy/40 px-2.5 py-1 font-mono text-[0.67rem] uppercase tracking-[0.12em] text-[#d3e4ff]">
+          <span className="rounded-full border border-lmBorder bg-lmSurfaceAlt px-2.5 py-1 font-mono text-[0.67rem] uppercase tracking-[0.12em] text-lmTextSoft dark:border-mistLine/45 dark:bg-navy/40 dark:text-[#d3e4ff]">
             {stage}
           </span>
           {index < stages.length - 1 ? (
@@ -38,10 +38,10 @@ export default function Projects() {
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.55, ease: 'easeOut' }}
       >
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-tealSignal">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-tealDark dark:text-tealSignal">
           Projects
         </p>
-        <h2 className="type-section-title mt-4 max-w-3xl text-ice">
+        <h2 className="type-section-title mt-4 max-w-3xl text-lmText dark:text-ice">
           Product builds where data intelligence meets interface execution.
         </h2>
 
@@ -53,15 +53,15 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.45, delay: index * 0.05, ease: 'easeOut' }}
-              className={`group rounded-[1.6rem] border p-5 sm:p-6 ${
+              className={`group rounded-[1.6rem] border p-5 shadow-sm sm:p-6 dark:shadow-none ${
                 project.featured
-                  ? 'border-tealSignal/55 bg-[linear-gradient(145deg,rgba(28,37,65,0.92),rgba(11,19,43,0.88))] lg:col-span-2'
-                  : 'border-mistLine/30 bg-[linear-gradient(145deg,rgba(28,37,65,0.78),rgba(11,19,43,0.72))]'
+                  ? 'border-tealDark/55 bg-lmSurface lg:col-span-2 dark:border-tealSignal/55 dark:bg-[linear-gradient(145deg,rgba(28,37,65,0.92),rgba(11,19,43,0.88))]'
+                  : 'border-lmBorder bg-lmSurface dark:border-mistLine/30 dark:bg-[linear-gradient(145deg,rgba(28,37,65,0.78),rgba(11,19,43,0.72))]'
               }`}
             >
               <div className="mb-4 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-mistLine">
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-lmMuted dark:text-mistLine">
                     {project.duration}
                   </p>
                   {project.featured ? (
@@ -73,13 +73,13 @@ export default function Projects() {
                 <span className="h-2 w-2 rounded-full bg-amberPulse" aria-hidden="true" />
               </div>
 
-              <h3 className={`font-heading font-semibold leading-tight text-ice ${
+              <h3 className={`font-heading font-semibold leading-tight text-lmText dark:text-ice ${
                 project.featured ? 'text-[1.55rem]' : 'text-[1.32rem]'
               }`}>
                 {project.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-relaxed text-[#d2e1f8]">
+              <p className="mt-3 text-sm leading-relaxed text-lmTextSoft dark:text-[#d2e1f8]">
                 {project.description}
               </p>
 
@@ -91,7 +91,7 @@ export default function Projects() {
                 {project.stack.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full border border-mistLine/35 bg-navy/45 px-3 py-1.5 text-xs font-semibold text-[#dce9ff]"
+                    className="rounded-full border border-lmBorder bg-lmSurfaceAlt px-3 py-1.5 text-xs font-semibold text-lmTextSoft dark:border-mistLine/35 dark:bg-navy/45 dark:text-[#dce9ff]"
                   >
                     {item}
                   </li>
@@ -103,7 +103,7 @@ export default function Projects() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-mistLine/45 bg-navy/35 px-4 py-2.5 text-sm font-semibold text-ice transition hover:border-tealSignal hover:text-tealSignal"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-lmBorder bg-lmSurfaceAlt px-4 py-2.5 text-sm font-semibold text-lmText transition hover:border-tealDark hover:text-tealDark dark:border-mistLine/45 dark:bg-navy/35 dark:text-ice dark:hover:border-tealSignal dark:hover:text-tealSignal"
                 >
                   View Code
                   <FaGithub size={15} aria-hidden="true" />

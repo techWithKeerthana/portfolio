@@ -68,16 +68,16 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.55, ease: 'easeOut' }}
-        className="grid gap-8 rounded-[2rem] border border-mistLine/30 bg-indigoSlate/55 p-6 sm:p-8 md:grid-cols-[1fr_1.2fr] md:p-10"
+        className="grid gap-8 rounded-[2rem] border border-lmBorder bg-lmSurface p-6 shadow-sm sm:p-8 md:grid-cols-[1fr_1.2fr] md:p-10 dark:border-mistLine/30 dark:bg-indigoSlate/55 dark:shadow-none"
       >
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-tealSignal">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-tealDark dark:text-tealSignal">
             Contact
           </p>
-          <h2 className="type-section-title mt-4 text-ice">
+          <h2 className="type-section-title mt-4 text-lmText dark:text-ice">
             Let us build something thoughtful and useful.
           </h2>
-          <p className="mt-4 text-base text-[#d4e3fb]">
+          <p className="mt-4 text-base text-lmTextSoft dark:text-[#d4e3fb]">
             Reach out for internships, collaborations, or full-time opportunities.
           </p>
 
@@ -85,7 +85,7 @@ export default function Contact() {
             <li>
               <a
                 href={`mailto:${contactData.email}`}
-                className="inline-flex min-h-11 items-center gap-2 break-all text-sm font-semibold text-ice transition hover:text-tealSignal"
+                className="inline-flex min-h-11 items-center gap-2 break-all text-sm font-semibold text-lmText transition hover:text-tealDark dark:text-ice dark:hover:text-tealSignal"
               >
                 <Mail size={16} aria-hidden="true" />
                 {contactData.email}
@@ -94,7 +94,7 @@ export default function Contact() {
             <li>
               <a
                 href={`tel:${contactData.phone}`}
-                className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ice transition hover:text-tealSignal"
+                className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-lmText transition hover:text-tealDark dark:text-ice dark:hover:text-tealSignal"
               >
                 <Phone size={16} aria-hidden="true" />
                 {contactData.phone}
@@ -105,7 +105,7 @@ export default function Contact() {
 
         <form onSubmit={onSubmit} noValidate className="space-y-4" aria-label="Contact form">
           <div>
-            <label htmlFor="name" className="mb-1 block text-sm font-semibold text-ice">
+            <label htmlFor="name" className="mb-1 block text-sm font-semibold text-lmText dark:text-ice">
               Name
             </label>
             <input
@@ -114,19 +114,19 @@ export default function Contact() {
               type="text"
               value={form.name}
               onChange={(event) => setForm((prev) => ({ ...prev, name: event.target.value }))}
-              className="min-h-11 w-full rounded-xl border border-mistLine/35 bg-navy/45 px-4 py-2.5 text-sm text-ice outline-none ring-tealSignal/70 transition focus:ring"
+              className="min-h-11 w-full rounded-xl border border-lmBorder bg-lmSurface px-4 py-2.5 text-sm text-lmText outline-none ring-tealDark/70 transition focus:ring dark:border-mistLine/35 dark:bg-navy/45 dark:text-ice dark:ring-tealSignal/70"
               aria-invalid={Boolean(errors.name)}
               aria-describedby={errors.name ? 'name-error' : undefined}
             />
             {errors.name ? (
-              <p id="name-error" className="mt-1 text-xs text-amberPulse">
+              <p id="name-error" className="mt-1 text-xs text-red-600 dark:text-amberPulse">
                 {errors.name}
               </p>
             ) : null}
           </div>
 
           <div>
-            <label htmlFor="email" className="mb-1 block text-sm font-semibold text-ice">
+            <label htmlFor="email" className="mb-1 block text-sm font-semibold text-lmText dark:text-ice">
               Email
             </label>
             <input
@@ -135,19 +135,19 @@ export default function Contact() {
               type="email"
               value={form.email}
               onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
-              className="min-h-11 w-full rounded-xl border border-mistLine/35 bg-navy/45 px-4 py-2.5 text-sm text-ice outline-none ring-tealSignal/70 transition focus:ring"
+              className="min-h-11 w-full rounded-xl border border-lmBorder bg-lmSurface px-4 py-2.5 text-sm text-lmText outline-none ring-tealDark/70 transition focus:ring dark:border-mistLine/35 dark:bg-navy/45 dark:text-ice dark:ring-tealSignal/70"
               aria-invalid={Boolean(errors.email)}
               aria-describedby={errors.email ? 'email-error' : undefined}
             />
             {errors.email ? (
-              <p id="email-error" className="mt-1 text-xs text-amberPulse">
+              <p id="email-error" className="mt-1 text-xs text-red-600 dark:text-amberPulse">
                 {errors.email}
               </p>
             ) : null}
           </div>
 
           <div>
-            <label htmlFor="message" className="mb-1 block text-sm font-semibold text-ice">
+            <label htmlFor="message" className="mb-1 block text-sm font-semibold text-lmText dark:text-ice">
               Message
             </label>
             <textarea
@@ -156,12 +156,12 @@ export default function Contact() {
               rows={5}
               value={form.message}
               onChange={(event) => setForm((prev) => ({ ...prev, message: event.target.value }))}
-              className="w-full rounded-xl border border-mistLine/35 bg-navy/45 px-4 py-2.5 text-sm text-ice outline-none ring-tealSignal/70 transition focus:ring"
+              className="w-full rounded-xl border border-lmBorder bg-lmSurface px-4 py-2.5 text-sm text-lmText outline-none ring-tealDark/70 transition focus:ring dark:border-mistLine/35 dark:bg-navy/45 dark:text-ice dark:ring-tealSignal/70"
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? 'message-error' : undefined}
             />
             {errors.message ? (
-              <p id="message-error" className="mt-1 text-xs text-amberPulse">
+              <p id="message-error" className="mt-1 text-xs text-red-600 dark:text-amberPulse">
                 {errors.message}
               </p>
             ) : null}
@@ -175,7 +175,7 @@ export default function Contact() {
           </button>
 
           {isSubmitted ? (
-            <p className="text-sm font-medium text-tealSignal">
+            <p className="text-sm font-medium text-tealDark dark:text-tealSignal">
               Thanks! Your email app should open with a prefilled message.
             </p>
           ) : null}
